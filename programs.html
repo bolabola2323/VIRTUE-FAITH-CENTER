@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Outreach Programs — Virtue Faith Center</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500&family=Cairo:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#04080b;--bg2:#0a151b;--ink:#f3eee4;--dim:#94a5aa;--gold:#f2b866;--amber:#ff8a3d;--teal:#2fb5b0;--line:rgba(242,184,102,.2);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Jost',sans-serif;font-weight:300;overflow-x:hidden;min-height:100%}
+h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif}
+.ar{font-family:'Cairo',sans-serif;direction:rtl}
+a{color:inherit}
+/* cinematic overlays */
+body::before{content:"";position:fixed;inset:0;z-index:2;pointer-events:none;opacity:.07;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+body::after{content:"";position:fixed;inset:0;z-index:2;pointer-events:none;background:radial-gradient(ellipse at center,transparent 55%,rgba(0,0,0,.4) 100%)}
+.bar{position:fixed;left:0;right:0;height:0;background:#000;z-index:80;pointer-events:none;animation:bars 2.2s cubic-bezier(.7,0,.2,1) .2s backwards}
+.bar.t{top:0}.bar.b{bottom:0}
+@keyframes bars{0%{height:52vh}100%{height:0}}
+.curtain{position:fixed;inset:0;background:var(--bg);z-index:100;pointer-events:none;animation:cout 1s ease forwards}
+.curtain.go{animation:none;opacity:1;transition:opacity .5s}
+@keyframes cout{from{opacity:1}to{opacity:0}}
+canvas#fx{position:fixed;inset:0;z-index:1;pointer-events:none}
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:8vh 6vw;overflow:hidden;}
+.hero.small{min-height:62svh}
+.beam{position:absolute;top:50%;left:50%;width:120vmax;height:120vmax;margin:-60vmax 0 0 -60vmax;pointer-events:none;will-change:transform;background:conic-gradient(from 0deg,transparent 0 8%,rgba(242,184,102,.09) 12%,transparent 17% 55%,rgba(47,181,176,.09) 60%,transparent 66%);animation:spin 80s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.halo{position:absolute;top:50%;left:50%;border-radius:50%;border:1px solid var(--line);width:min(70vw,640px);height:min(70vw,640px);margin:calc(min(70vw,640px)/-2) 0 0 calc(min(70vw,640px)/-2);animation:spin 80s linear infinite;pointer-events:none}
+.halo.two{width:min(92vw,900px);height:min(92vw,900px);margin:calc(min(92vw,900px)/-2) 0 0 calc(min(92vw,900px)/-2);opacity:.5;animation-direction:reverse}
+.inner{position:relative;z-index:5;transition:transform .3s ease-out}
+.ticker-wrap{width:100%;max-width:1000px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);overflow:hidden;height:1.6em;margin:0 auto 2rem;position:relative}
+.ticker{position:absolute;left:0;white-space:nowrap;font-size:.8rem;letter-spacing:.3em;color:var(--teal);font-weight:500;animation:tick 34s linear infinite}
+@keyframes tick{to{transform:translateX(-50%)}}
+.eyebrow{color:var(--teal);font-size:.75rem;letter-spacing:.34em;margin-bottom:.9rem;font-weight:500}
+.title{font-size:clamp(2.5rem,8vw,5.8rem);font-weight:600;letter-spacing:.05em;line-height:1.05;color:#f8e2b8;text-shadow:0 0 28px rgba(255,138,61,.35)}
+.title.sm{font-size:clamp(2.2rem,6vw,4.2rem)}
+.title .w{display:inline-block;white-space:nowrap}
+.title .l{display:inline-block;opacity:0;filter:blur(18px);transform:translateY(40px) scale(1.3);animation:letter 1.4s cubic-bezier(.2,.7,.1,1) forwards}
+@keyframes letter{to{opacity:1;filter:blur(0);transform:none}}
+.rule{width:0;height:1px;margin:1.6rem auto 0;background:linear-gradient(90deg,transparent,var(--gold),transparent);animation:rule 1.2s ease 1.1s forwards}
+@keyframes rule{to{width:min(60vw,420px)}}
+.subline{margin-top:1.4rem;font-size:1.02rem;color:var(--dim);letter-spacing:.06em;opacity:0;animation:fadein 1s ease 1.3s forwards;max-width:60ch;margin-inline:auto;line-height:1.7}
+.subline b{color:var(--ink);font-weight:400}
+.scrolldown{position:absolute;bottom:calc(7vh + env(safe-area-inset-bottom,0px));font-size:.7rem;letter-spacing:.3em;color:var(--dim);opacity:0;animation:fadein 1.2s ease 2.8s forwards;z-index:5}
+.scrolldown span{display:block;width:1px;height:34px;background:linear-gradient(var(--gold),transparent);margin:.6rem auto 0;animation:stretch 2s ease-in-out infinite}
+@keyframes stretch{50%{height:14px}}
+@keyframes fadein{to{opacity:1}}
+/* menu */
+.tab{position:fixed;top:50%;right:0;transform:translateY(-50%);z-index:90;writing-mode:vertical-rl;background:linear-gradient(180deg,#12262c,#071015);border:1px solid var(--line);border-right:none;color:var(--gold);font-family:'Cormorant Garamond',serif;font-size:.95rem;letter-spacing:.28em;padding:1.6rem .55rem;border-radius:10px 0 0 10px;cursor:pointer;box-shadow:-6px 0 30px rgba(255,138,61,.15);transition:padding .3s,box-shadow .3s}
+.tab:hover{padding-right:.9rem;box-shadow:-6px 0 34px rgba(255,138,61,.4)}
+.homelink{position:fixed;top:calc(1.2rem + env(safe-area-inset-top,0px));left:1.6rem;z-index:90;color:var(--dim);text-decoration:none;font-size:.78rem;letter-spacing:.14em;border-bottom:1px solid var(--line);padding-bottom:2px;transition:color .3s}
+.homelink:hover{color:var(--gold)}
+
+/* cinematic menu */
+.flower-overlay{position:fixed;inset:0;z-index:95;visibility:hidden;transition:visibility 0s 1.2s}
+.flower-overlay.open{visibility:visible;transition-delay:0s}
+.strips{position:absolute;inset:0;display:flex}
+.strips i{flex:1;background:linear-gradient(180deg,#0c2830,#03080b 75%);border-right:1px solid rgba(242,184,102,.07);transform:translateY(-101%);transition:transform .75s cubic-bezier(.7,0,.2,1) calc((5 - var(--d))*.05s)}
+.strips i:nth-child(even){transform:translateY(101%)}
+.open .strips i{transform:none;transition-delay:calc(var(--d)*.06s)}
+.flower-overlay::after{content:"";position:absolute;top:0;bottom:0;width:30%;left:-40%;background:linear-gradient(90deg,transparent,rgba(242,184,102,.2),transparent);transform:skewX(-20deg);z-index:3;pointer-events:none}
+.open::after{animation:sweep 1.5s ease .35s}
+@keyframes sweep{to{left:125%}}
+.mn{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;justify-content:center;padding:0 8vw;background:radial-gradient(520px circle at var(--gx,75%) var(--gy,40%),rgba(255,138,61,.17),transparent 70%);opacity:0;transition:opacity .35s}
+.open .mn{opacity:1;transition-delay:.45s}
+.mn-top{position:absolute;top:calc(1.2rem);left:8vw;right:8vw;display:flex;justify-content:space-between;align-items:center;letter-spacing:.3em;font-size:.85rem;color:var(--gold)}
+.petal-close{background:none;border:1px solid var(--line);color:var(--gold);padding:.6rem 1.3rem;letter-spacing:.25em;font-size:.72rem;cursor:pointer;font-family:'Jost',sans-serif;transition:all .3s}
+.petal-close:hover{background:linear-gradient(90deg,var(--gold),var(--amber));color:#04080b;box-shadow:0 0 26px rgba(255,138,61,.5)}
+.mn nav{display:flex;flex-direction:column}
+.mn nav a{position:relative;display:flex;align-items:baseline;gap:1.4rem;text-decoration:none;padding:.2rem 0;transition:opacity .4s,transform .5s cubic-bezier(.2,.7,.2,1)}
+.mn nav em{font:italic 500 .95rem 'Cormorant Garamond',serif;color:var(--amber);letter-spacing:.2em;opacity:0;transition:opacity .5s}
+.open nav em{opacity:1;transition-delay:calc(.8s + var(--i)*.08s)}
+.mk{display:block;overflow:hidden}
+.mn nav b{display:block;font:600 clamp(2rem,6.4vw,4.5rem)/1.3 'Cormorant Garamond',serif;color:var(--ink);transform:translateY(115%);transition:transform .5s ease,color .3s,text-shadow .3s}
+.open nav b{transform:none;transition:transform 1s cubic-bezier(.2,.8,.1,1) calc(.55s + var(--i)*.08s),color .3s,text-shadow .3s}
+.mn nav a::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:100%;background:linear-gradient(90deg,var(--amber),transparent);transform:scaleX(0);transform-origin:left;transition:transform .6s}
+.mn nav a:hover::after{transform:scaleX(1)}
+.mn nav:hover a:not(:hover){opacity:.25}
+.mn nav a:hover{transform:translateX(18px)}
+.mn nav a:hover b{color:var(--gold);text-shadow:0 0 40px rgba(255,138,61,.6)}
+.mn-foot{position:absolute;bottom:calc(1.2rem);left:8vw;font-size:.72rem;letter-spacing:.25em;color:var(--dim)}
+/* content */
+section.panel{position:relative;z-index:5;padding:5.5rem 7vw;max-width:1200px;margin:0 auto}
+.panel h2{font-size:clamp(1.9rem,4vw,2.9rem);font-weight:500;margin-bottom:1.1rem}
+.panel p{color:var(--dim);line-height:1.85;max-width:62ch;font-size:1.02rem}
+.panel p.ar{margin-top:.8rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.3rem;margin-top:2.2rem}
+.item,.card{position:relative;border:1px solid var(--line);border-radius:6px;padding:1.5rem;background:linear-gradient(160deg,rgba(18,42,50,.55),rgba(6,12,16,.6));text-decoration:none;overflow:hidden;transition:transform .5s cubic-bezier(.2,.7,.2,1),border-color .4s}
+.item::before,.card::before{content:"";position:absolute;inset:0;background:radial-gradient(320px circle at var(--mx,50%) var(--my,0%),rgba(255,138,61,.2),transparent 60%);opacity:0;transition:opacity .4s}
+.item:hover,.card:hover{transform:translateY(-6px);border-color:rgba(255,138,61,.6)}
+.item:hover::before,.card:hover::before{opacity:1}
+.item h3,.card h3{font-weight:600;font-size:1.3rem;margin-bottom:.4rem;position:relative}
+.item p,.card p{font-size:.92rem;position:relative}
+.card .n{font-family:'Cormorant Garamond',serif;font-size:2.4rem;color:var(--amber);opacity:.85;display:block;position:relative}
+.card .go{display:inline-block;margin-top:.9rem;color:var(--gold);font-size:.75rem;letter-spacing:.2em;position:relative;transition:letter-spacing .4s}
+.card:hover .go{letter-spacing:.34em}
+.btn{display:inline-block;margin-top:1.6rem;padding:.9rem 2.4rem;border:1px solid var(--gold);color:var(--gold);text-decoration:none;letter-spacing:.14em;font-size:.85rem;border-radius:2px;transition:all .3s}
+.btn:hover{background:linear-gradient(90deg,var(--gold),var(--amber));color:#04080b;box-shadow:0 0 30px rgba(255,138,61,.5)}
+.center{text-align:center}.center p{margin-inline:auto}
+footer{position:relative;z-index:5;text-align:center;padding:3rem 6vw calc(6vh + env(safe-area-inset-bottom,0px));color:#5d7075;font-size:.8rem;letter-spacing:.08em;border-top:1px solid var(--line)}
+.reveal{opacity:0;transform:translateY(40px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
+.reveal.show{opacity:1;transform:none}
+.reveal .item,.reveal .card{opacity:0;transform:translateY(30px)}
+.reveal.show .item,.reveal.show .card{opacity:1;transform:none;transition:opacity .8s ease,transform .5s cubic-bezier(.2,.7,.2,1),border-color .4s;transition-delay:calc(var(--i)*.09s + .15s),calc(var(--i)*.09s + .15s),0s,0s}
+.reveal.show .item:hover,.reveal.show .card:hover{transition-delay:0s}
+
+/* flowing ambient colour: one shared light field, no seams */
+.amb{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.amb i{position:absolute;width:90vmax;height:90vmax;border-radius:50%;will-change:transform;transition:translate 1s ease-out}
+.amb .a{left:-30vmax;top:-30vmax;background:radial-gradient(circle,rgba(47,181,176,.28),transparent 65%);translate:calc(var(--p,0)*70vw) calc(var(--p,0)*55vh);animation:dr1 26s ease-in-out infinite alternate}
+.amb .b{right:-35vmax;bottom:-35vmax;background:radial-gradient(circle,rgba(255,138,61,.26),transparent 65%);translate:calc(var(--p,0)*-60vw) calc(var(--p,0)*-50vh);animation:dr2 32s ease-in-out infinite alternate}
+.amb .c{left:20vw;top:30vh;width:60vmax;height:60vmax;background:radial-gradient(circle,rgba(242,184,102,.09),transparent 65%);animation:dr1 40s ease-in-out infinite alternate-reverse}
+@keyframes dr1{to{transform:translate(12vw,10vh) scale(1.15)}}
+@keyframes dr2{to{transform:translate(-10vw,-12vh) scale(1.1)}}
+.deco{position:absolute;inset:0;overflow:hidden;pointer-events:none;-webkit-mask-image:linear-gradient(180deg,#000 50%,transparent 100%);mask-image:linear-gradient(180deg,#000 50%,transparent 100%)}
+
+/* programs */
+.pidx{position:relative;z-index:5;display:grid;grid-template-columns:repeat(5,1fr);gap:.8rem;max-width:1200px;margin:0 auto;padding:1rem 7vw 2rem}
+.pidx a{display:flex;gap:.7rem;align-items:baseline;padding:.9rem 1rem;border:1px solid var(--line);border-radius:6px;text-decoration:none;background:rgba(12,32,40,.5);opacity:0;animation:tileIn .7s ease forwards;animation-delay:calc(var(--i)*.07s + 1.3s);transition:border-color .3s,transform .3s,background .3s}
+.pidx a:hover{border-color:var(--amber);transform:translateY(-3px);background:rgba(255,138,61,.08)}
+.pidx em{font:italic 500 1.1rem 'Cormorant Garamond',serif;color:var(--amber)}
+.pidx span{font-size:.82rem;line-height:1.35;color:var(--ink)}
+@keyframes tileIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.ch{position:relative;z-index:5;max-width:1200px;margin:0 auto;padding:4.5rem 7vw;display:grid;grid-template-columns:minmax(240px,.8fr) 2fr;gap:3rem;scroll-margin-top:1rem}
+.ch+.ch::before{content:"";position:absolute;top:0;left:7vw;right:7vw;height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent)}
+.chead{position:sticky;top:4rem;align-self:start;opacity:0;transform:translateX(-30px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+.ch.show .chead{opacity:1;transform:none}
+.cno{display:block;font:600 6.5rem/1 'Cormorant Garamond',serif;color:transparent;-webkit-text-stroke:1px rgba(255,138,61,.6)}
+.chead h2{font-size:clamp(1.7rem,2.6vw,2.4rem);font-weight:500;line-height:1.15;margin-top:.5rem}
+.chead .tag{margin-top:.8rem;font:italic 500 1.1rem/1.5 'Cormorant Garamond',serif;color:var(--teal);letter-spacing:.03em}
+.cbody{padding:2rem 2.2rem;border:1px solid var(--line);border-radius:8px;background:linear-gradient(160deg,rgba(14,36,44,.5),rgba(4,8,11,.5))}
+.cbody>*{opacity:0;transform:translateY(22px)}
+.ch.show .cbody>*{opacity:1;transform:none;transition:opacity .8s ease calc(.25s + var(--k,0)*.09s),transform .8s cubic-bezier(.2,.7,.2,1) calc(.25s + var(--k,0)*.09s)}
+.cbody p{color:rgba(243,238,228,.86);line-height:1.8;font-size:1.02rem;max-width:none;margin-top:.9rem}
+.cbody>:first-child{margin-top:0}
+.cbody p.ar{text-align:right;line-height:2}
+.cbody p.q{font:italic 500 1.5rem/1.5 'Cormorant Garamond',serif;color:#f8e2b8;border-left:2px solid var(--amber);padding-left:1.2rem;margin:1.5rem 0}
+.cbody p.end{font:600 1.6rem/1.35 'Cormorant Garamond',serif;color:#f8e2b8;margin-top:1.5rem}
+.cbody .lbl{margin-top:1.6rem;font-size:.72rem;letter-spacing:.26em;color:var(--gold);font-weight:500}
+.chips{list-style:none;display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.8rem}
+.chips li{border:1px solid var(--line);border-radius:99px;padding:.36rem .95rem;font-size:.88rem;background:rgba(242,184,102,.05);opacity:0;transform:scale(.9) translateY(8px)}
+.ch.show .chips li{opacity:1;transform:none;transition:opacity .5s ease calc(.5s + var(--c,0)*.05s),transform .5s cubic-bezier(.34,1.56,.64,1) calc(.5s + var(--c,0)*.05s),border-color .3s,background .3s}
+.chips li:hover{border-color:var(--amber);background:rgba(255,138,61,.12)}
+.eq{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem;margin-top:.9rem}
+.eq>*{opacity:0;transform:translateX(-12px)}
+.ch.show .eq>*{opacity:1;transform:none;transition:opacity .6s ease calc(.5s + var(--c,0)*.12s),transform .6s ease calc(.5s + var(--c,0)*.12s)}
+.eq b{border:1px solid rgba(255,138,61,.5);border-radius:6px;padding:.5rem .9rem;font:600 1.05rem 'Cormorant Garamond',serif;background:rgba(255,138,61,.07)}
+.eq i{font-style:normal;font-size:1.3rem;color:var(--amber)}
+.eq.fl b{border-color:rgba(47,181,176,.55);background:rgba(47,181,176,.08)}.eq.fl i{color:var(--teal)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;margin-top:1.2rem}
+.res{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:.8rem;margin-top:1.6rem}
+.res span{padding:.8rem 1rem;border:1px solid rgba(47,181,176,.4);border-radius:6px;background:rgba(47,181,176,.06);font:600 1.05rem 'Cormorant Garamond',serif;opacity:0;transform:translateY(10px)}
+.ch.show .res span{opacity:1;transform:none;transition:opacity .6s ease calc(.5s + var(--c,0)*.12s),transform .6s ease calc(.5s + var(--c,0)*.12s)}
+.feat{margin-top:1.6rem;padding:1.2rem 1.4rem 1.4rem;border:1px solid rgba(255,138,61,.45);border-radius:8px;background:rgba(255,138,61,.05)}
+.feat h4{font:600 1.35rem 'Cormorant Garamond',serif;color:#f8e2b8}
+.rail{position:fixed;left:1.4rem;top:50%;transform:translateY(-50%);z-index:60;display:none;flex-direction:column;gap:.5rem;opacity:0;transition:opacity .5s}
+.rail.vis{opacity:1}
+.rail a{display:flex;align-items:center;gap:.6rem;font-size:.66rem;letter-spacing:.2em;color:var(--dim);text-decoration:none;transition:color .3s}
+.rail a::before{content:"";width:12px;height:1px;background:currentColor;transition:width .4s}
+.rail a.on{color:var(--gold)}.rail a.on::before{width:32px;background:var(--amber)}
+@media(min-width:1300px){.rail{display:flex}}
+@media(max-width:1000px){.pidx{grid-template-columns:repeat(3,1fr)}.ch{grid-template-columns:1fr;gap:1.6rem}.chead{position:static}.cno{font-size:4.5rem}}
+@media(max-width:620px){.pidx{grid-template-columns:repeat(2,1fr)}.two{grid-template-columns:1fr}.cbody{padding:1.4rem 1.2rem}}
+@media(min-width:1400px){.title{font-size:6.6rem}.title.sm{font-size:4.8rem}.panel p{font-size:1.1rem}.subline{font-size:1.15rem}}
+@media(prefers-reduced-motion:reduce){*,::before{animation-duration:.01s!important;animation-iteration-count:1!important}}
+
+/* brand logo (image/0) */
+.brand{position:fixed;left:calc(20px + env(safe-area-inset-left,0px));top:calc(14px + env(safe-area-inset-top,0px));z-index:60;display:none;line-height:0}
+.brand img{height:84px;width:auto;display:block;animation:brIn 1.4s cubic-bezier(.2,.7,.1,1) .3s backwards}
+@keyframes brIn{from{opacity:0;filter:blur(18px) brightness(2.5);transform:scale(1.4)}}
+body.has-logo .brand{display:block}
+body.has-logo .homelink{left:calc(1.6rem + var(--bw,0px) + 1.2rem);top:calc(46px + env(safe-area-inset-top,0px))}
+@media(max-width:600px){.brand img{height:64px}body.has-logo .homelink{top:calc(34px + env(safe-area-inset-top,0px))}}
+</style></head><body>
+<div class="amb"><i class="a"></i><i class="b"></i><i class="c"></i></div><div class="curtain"></div><div class="bar t"></div><div class="bar b"></div><canvas id="fx"></canvas>
+<a class="homelink" href="index.html">← HOME</a>
+<div class="hero small" style="min-height:44svh"><div class="deco"><div class="beam"></div><div class="halo"></div></div><div class="inner"><h1 class="title sm">Outreach Programs</h1><div class="rule"></div></div></div>
+<a class="brand" href="index.html" id="brand" title="Home"><img alt="Virtue Faith Center"></a>
+<div class="tab" id="tabBtn">MENU</div>
+<div class="flower-overlay" id="ov"><div class="strips"><i style="--d:0"></i><i style="--d:1"></i><i style="--d:2"></i><i style="--d:3"></i><i style="--d:4"></i><i style="--d:5"></i></div><div class="mn"><div class="mn-top"><span class="serif">VIRTUE FAITH CENTER</span><button class="petal-close" id="closeBtn">CLOSE ✕</button></div><nav><a href="about.html" style="--i:0"><em>01</em><span class="mk"><b>About</b></span></a><a href="programs.html" style="--i:1"><em>02</em><span class="mk"><b>Outreach Programs</b></span></a><a href="services.html" style="--i:2"><em>03</em><span class="mk"><b>Our Services</b></span></a><a href="board.html" style="--i:3"><em>04</em><span class="mk"><b>Board of Directors</b></span></a><a href="donate.html" style="--i:4"><em>05</em><span class="mk"><b>Donate</b></span></a><a href="contact.html" style="--i:5"><em>06</em><span class="mk"><b>Contact</b></span></a></nav><div class="mn-foot">BUILDING CONNECTIONS · SERVING COMMUNITIES</div></div></div>
+<nav class="pidx"><a href="#p1" style="--i:0"><em>01</em><span>Community Bridges Outreach</span></a><a href="#p2" style="--i:1"><em>02</em><span>Serve Together</span></a><a href="#p3" style="--i:2"><em>03</em><span>Organizations Without Walls</span></a><a href="#p4" style="--i:3"><em>04</em><span>Community Table</span></a><a href="#p5" style="--i:4"><em>05</em><span>One Community — Many Stories</span></a><a href="#p6" style="--i:5"><em>06</em><span>Youth Community Ambassadors</span></a><a href="#p7" style="--i:6"><em>07</em><span>Intergenerational Connection</span></a><a href="#p8" style="--i:7"><em>08</em><span>Welcome &amp; Connect</span></a><a href="#p9" style="--i:8"><em>09</em><span>Volunteers Serving Together</span></a><a href="#p10" style="--i:9"><em>10</em><span>Multiculturalism and Anti-Racism Program</span></a></nav>
+<main><section class="ch" id="p1"><div class="chead"><span class="cno">01</span><h2>Community Bridges Outreach</h2></div><div class="cbody"><p>We connect directly with community organizations, nonprofits, schools, senior centres, cultural organizations, newcomer organizations, libraries, and other community partners.</p><p>Our goal is to listen, understand needs, identify opportunities, and develop meaningful partnerships.</p><p class="q">“What does your community need, and how can we work together?”</p><p class="end">Meet. Listen. Connect. Collaborate.</p></div></section><section class="ch" id="p2"><div class="chead"><span class="cno">02</span><h2>Serve Together</h2><p class="tag">Different Backgrounds. One Community. One Purpose.</p></div><div class="cbody"><p>We bring volunteers and organizations together through practical community service projects.</p><div class="lbl">ACTIVITIES MAY INCLUDE</div><ul class="chips"><li>Community care packages</li><li>Food and clothing drives</li><li>Support for seniors</li><li>Community clean-up projects</li><li>School-supply drives</li><li>Community gardens</li><li>Seasonal community initiatives</li><li>Volunteer service projects</li></ul><p>Our goal is not only to serve, but also to build relationships while serving together.</p></div></section><section class="ch" id="p3"><div class="chead"><span class="cno">03</span><h2>Organizations Without Walls</h2><p class="tag">Connecting Organizations. Creating Opportunities.</p></div><div class="cbody"><p>Many organizations have valuable resources, volunteers, knowledge, programs, or facilities but may not have the opportunity to connect with organizations that need them.</p><p>Virtue Faith Center helps create those connections.</p><div class="lbl">WE CONNECT</div><div class="eq "><b>Organizations</b><i>+</i><b>Volunteers</b><i>+</i><b>Resources</b><i>+</i><b>Community Needs</b></div><p>to develop collaborative projects that benefit the wider community.</p><ul class="chips"><li>Culture Zone</li><li>Story Zone</li><li>Food &amp; Traditions Zone</li><li>Art Zone</li><li>Youth Zone</li><li>Dialogue Zone</li><li>Community Service Zone</li></ul><div class="lbl">COMMUNITY PARTNERSHIP MAP</div><ul class="chips"><li>Seniors</li><li>Youth</li><li>Newcomers</li><li>Women</li><li>Indigenous Communities</li><li>Faith Communities</li><li>Cultural Organization</li><li>Nonprofits</li><li>Health and social-service organizations</li><li>Universities &amp; colleges</li></ul></div></section><section class="ch" id="p4"><div class="chead"><span class="cno">04</span><h2>Community Table</h2><p class="tag">Meet. Listen. Talk. Connect.</p></div><div class="cbody"><p>Community Table brings individuals, volunteers, community leaders, and organizations together for meaningful conversations about community needs and opportunities.</p><div class="lbl">TOPICS MAY INCLUDE</div><ul class="chips"><li>Building welcoming communities</li><li>Youth leadership</li><li>Connecting generations</li><li>Volunteerism</li><li>Supporting newcomers</li><li>Community belonging</li><li>Collaboration among organizations</li></ul></div></section><section class="ch" id="p5"><div class="chead"><span class="cno">05</span><h2>One Community — Many Stories</h2></div><div class="cbody"><p>We create opportunities for people from different cultural backgrounds to meet, learn, share experiences, and participate in community activities together.</p><p>This is one of the core programs; the concept involves selecting an organization or community each month—such as one serving seniors from a specific background (e.g., Chinese-Canadian, Black Canadian, Arab Canadian, or South Asian). We learn about their history and experiences, then participate in a volunteer activity with them.</p><p>Afterwards, we organize an open gathering for young people from diverse backgrounds.</p><p>In this way, getting to know one another becomes a genuine human experience rather than merely a cultural celebration.</p><p>Our activities go beyond cultural celebrations.</p><div class="lbl">WE FOCUS ON</div><div class="eq fl"><b>Learn</b><i>→</i><b>Meet</b><i>→</i><b>Listen</b><i>→</i><b>Participate</b><i>→</i><b>Serve</b><i>→</i><b>Share</b></div></div></section><section class="ch" id="p6"><div class="chead"><span class="cno">06</span><h2>Youth Community Ambassadors</h2></div><div class="cbody"><p>We empower young people to become active contributors to their communities.</p><div class="lbl">PARTICIPANTS DEVELOP SKILLS IN</div><ul class="chips"><li>Leadership</li><li>Communication</li><li>Teamwork</li><li>Volunteerism</li><li>Community engagement</li><li>Cultural awareness</li><li>Event planning</li></ul><p>Youth Ambassadors participate in outreach activities and community service projects.</p></div></section><section class="ch" id="p7"><div class="chead"><span class="cno">07</span><h2>Intergenerational Connection</h2><p class="tag">Learning Across Generations</p></div><div class="cbody"><p>We create opportunities for youth and seniors to learn from one another.</p><div class="two"><div><div class="lbl">SENIORS CAN SHARE</div><ul class="chips"><li>Life experiences</li><li>Stories and traditions</li><li>Practical skills</li><li>Cultural knowledge</li></ul></div><div><div class="lbl">YOUTH CAN SHARE</div><ul class="chips"><li>Technology skills</li><li>Digital tools</li><li>Online resources</li><li>Modern communication skills</li></ul></div></div><p>Together, generations become teachers, learners, and community partners.</p></div></section><section class="ch" id="p8"><div class="chead"><span class="cno">08</span><h2>Welcome &amp; Connect</h2><p class="tag">Welcome. Connect. Participate. Belong.</p></div><div class="cbody"><p>We help newcomers discover opportunities to connect with their local communities through:</p><ul class="chips"><li>Volunteer opportunities</li><li>Community organizations</li><li>Libraries</li><li>Community centres</li><li>Cultural activities</li><li>Social programs</li><li>Community events</li></ul><p>Our role is to help people build relationships and become active participants in their communities.</p></div></section><section class="ch" id="p9"><div class="chead"><span class="cno">09</span><h2>Volunteers Serving Together</h2></div><div class="cbody"><p>50 volunteers from five different organizations are participating in:</p><ul class="chips"><li>Cleaning a community park</li><li>Assembling food hampers</li><li>Visiting seniors</li><li>Community gardening</li><li>A donation drive</li><li>A clothing drive</li><li>A winter support campaign</li><li>A school-supply campaign</li></ul><p>A casual gathering follows the work.</p><p>The goal here is not merely to complete the charitable tasks. Rather: People who serve together begin to know one another.</p><p class="end">And this is a very practical way to build relationships.</p></div></section><section class="ch" id="p10"><div class="chead"><span class="cno">10</span><h2>Multiculturalism and Anti-Racism Program</h2></div><div class="cbody"><p class="ar">يركز على التفاهم بين الثقافات والأديان، والحوار، والمشاركة المدنية، وبناء الانتماء والتماسك الاجتماعي. نقيم أنشطة تجمع أشخاصاً من خلفيات مختلفة تساعد على بناء روابط ذات معنى وتقليل العزلة الاجتماعية.</p><div class="lbl">YOUTH COMMUNITY AMBASSADORS TRAINING</div><ul class="chips"><li>Intercultural communication</li><li>Leadership</li><li>Anti-racism</li><li>Understanding stereotypes</li><li>Conflict resolution</li><li>Media literacy</li><li>Misinformation</li><li>Community engagement</li><li>Volunteerism</li><li>Event planning</li></ul><div class="res"><span>Community Connection Toolkit</span><span>Community Connections Map</span><span>Peel Community Connections Directory</span></div><div class="feat"><h4>Canada Community Connections Day</h4><ul class="chips"><li>Community Service Zone</li><li>Cultural Connections Zone</li><li>Interfaith Dialogue Zone</li><li>Youth Zone</li><li>Seniors Zone</li><li>Newcomer Zone</li><li>Community Organizations Zone</li><li>Arts &amp; Storytelling Zone</li></ul></div></div></section></main>
+<nav class="rail"><a href="#p1">01</a><a href="#p2">02</a><a href="#p3">03</a><a href="#p4">04</a><a href="#p5">05</a><a href="#p6">06</a><a href="#p7">07</a><a href="#p8">08</a><a href="#p9">09</a><a href="#p10">10</a></nav>
+<footer>VIRTUE FAITH CENTER — Building Connections. Serving Communities.<br>Connect · Listen · Serve · Collaborate · Impact</footer>
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+// title letters
+$$('.title').forEach(t=>{let i=0;t.innerHTML=t.textContent.trim().split(' ').map(w=>'<span class="w">'+[...w].map(c=>`<span class="l" style="animation-delay:${.5+(i++)*.07}s">${c}</span>`).join('')+'</span>').join(' ')});
+// menu
+const ov=$('#ov');$('#tabBtn').onclick=()=>ov.classList.add('open');
+const cl=()=>ov.classList.remove('open');$('#closeBtn').onclick=cl;ov.onclick=e=>{if(e.target===ov||e.target.classList.contains('mn'))cl()};
+addEventListener('keydown',e=>{if(e.key==='Escape')cl()});
+// page transitions (every menu link = external page)
+const cu=$('.curtain');addEventListener('pageshow',()=>cu.classList.remove('go'));
+$$('a[href$=".html"]').forEach(a=>a.onclick=e=>{e.preventDefault();cu.classList.add('go');setTimeout(()=>location.href=a.href,520)});
+// reveal
+const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('show');io.unobserve(en.target)}}),{threshold:.15});
+$$('.reveal').forEach(el=>{el.querySelectorAll('.item,.card').forEach((c,i)=>c.style.setProperty('--i',i));io.observe(el)});
+// spotlight cards
+$$('.item,.card').forEach(c=>c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect();c.style.setProperty('--mx',e.clientX-r.left+'px');c.style.setProperty('--my',e.clientY-r.top+'px')}));
+
+// embers
+const cv=$('#fx'),x=cv.getContext('2d');let W,H,P=[];
+function rs(){W=cv.width=innerWidth;H=cv.height=innerHeight}rs();addEventListener('resize',rs);
+const mk=()=>({x:Math.random()*W,y:H+10,r:Math.random()*1.6+.5,v:Math.random()*.5+.2,d:Math.random()*2-1,a:Math.random()*.6+.25,t:Math.random()>.75});
+for(let i=0;i<45;i++){const p=mk();p.y=Math.random()*H;P.push(p)}
+(function f(){x.clearRect(0,0,W,H);for(let i=0;i<P.length;i++){const p=P[i];p.y-=p.v;p.x+=Math.sin(p.y/60)*.35+p.d*.15;if(p.y<-10){P[i]=mk();continue}
+const c=p.t?'47,181,176':'255,160,80';
+x.fillStyle=`rgba(${c},${p.a*.18})`;x.beginPath();x.arc(p.x,p.y,p.r*4,0,6.3);x.fill();
+x.fillStyle=`rgba(${c},${p.a})`;x.beginPath();x.arc(p.x,p.y,p.r,0,6.3);x.fill()}requestAnimationFrame(f)})();
+const rt=document.documentElement;let tk=0;addEventListener('scroll',()=>{if(tk)return;tk=1;requestAnimationFrame(()=>{const m=rt.scrollHeight-innerHeight;rt.style.setProperty('--p',m>0?scrollY/m:0);tk=0})},{passive:true});const chs=[...document.querySelectorAll('.ch')],rl=[...document.querySelectorAll('.rail a')],rail=document.querySelector('.rail');
+const cio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');cio.unobserve(e.target)}}),{threshold:.08});
+chs.forEach(c=>{c.querySelectorAll('.cbody>*').forEach((e,i)=>e.style.setProperty('--k',i));c.querySelectorAll('.chips,.eq,.res').forEach(g=>[...g.children].forEach((e,i)=>e.style.setProperty('--c',i)));cio.observe(c)});
+const sp=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)rl.forEach(a=>a.classList.toggle('on',a.hash==='#'+e.target.id))}),{rootMargin:'-40% 0px -55% 0px'});chs.forEach(c=>sp.observe(c));
+addEventListener('scroll',()=>rail.classList.toggle('vis',scrollY>350),{passive:true});
+;(function(){const B=document.getElementById('brand'),I=B.querySelector('img'),E=['png','svg','webp','jpg','jpeg','PNG','SVG','WEBP','JPG','JPEG'],R=document.documentElement;let k=0;
+const W=()=>R.style.setProperty('--bw',I.offsetWidth+'px');I.onload=W;addEventListener('resize',W);
+(function nx(){if(k>=E.length)return;const t=new Image();t.onload=()=>{I.src=t.src;document.body.classList.add('has-logo');W();let ic=document.querySelector('link[rel=icon]');if(!ic){ic=document.createElement('link');ic.rel='icon';document.head.appendChild(ic)}ic.href=t.src};t.onerror=()=>{k++;nx()};t.src='image/0.'+E[k]})()})();
+</script></body></html>
